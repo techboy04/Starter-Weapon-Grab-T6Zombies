@@ -8,7 +8,7 @@
 
 init()
 {
-    if(getDvar("mapname") == "zm_prison")
+    if(getDvar("mapname") != "zm_prison")
 	{
 		level thread setStartLocation();
 		level thread onPlayerConnect();
