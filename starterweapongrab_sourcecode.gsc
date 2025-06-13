@@ -76,7 +76,7 @@ setStartLocation()
 	{
 		if(getDvar("mapname") == "zm_prison") //mob of the dead
 		{
-
+			thread spawnStarterCrate((755.531, 10397.1, 1344.13), "m1911_zm", "t6_wpn_pistol_m1911_world", -90);
 		}
 		else if(getDvar("mapname") == "zm_buried") //buried
 		{
@@ -114,7 +114,7 @@ spawnStarterCrate(location, weapon, weaponmodel, angle)
 	while(1)
 	{
 		starterTrigger waittill( "trigger", player );
-		if ( player usebuttonpressed() )
+		if ( player usebuttonpressed() && !isDefined(player.e_afterlife_corpse))
 		{
 			if(player usebuttonpressed() && !player maps\mp\zombies\_zm_laststand::player_is_in_laststand() )
 			{
